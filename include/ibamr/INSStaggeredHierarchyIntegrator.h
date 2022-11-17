@@ -402,7 +402,6 @@ private:
     SAMRAI::tbox::Pointer<SAMRAI::pdat::SideVariable<NDIM, double> > d_U_var;
     SAMRAI::tbox::Pointer<SAMRAI::pdat::CellVariable<NDIM, double> > d_P_var;
     SAMRAI::tbox::Pointer<SAMRAI::pdat::SideVariable<NDIM, double> > d_F_var;
-    SAMRAI::tbox::Pointer<SAMRAI::pdat::CellVariable<NDIM, double> > d_F_cc_var;
     SAMRAI::tbox::Pointer<SAMRAI::pdat::CellVariable<NDIM, double> > d_Q_var;
     SAMRAI::tbox::Pointer<SAMRAI::pdat::SideVariable<NDIM, double> > d_N_old_var;
 
@@ -427,6 +426,7 @@ private:
      * Variables for graphical output.
      */
     SAMRAI::tbox::Pointer<SAMRAI::pdat::NodeVariable<NDIM, double> > d_U_nc_var;
+    SAMRAI::tbox::Pointer<SAMRAI::pdat::NodeVariable<NDIM, double> > d_F_nc_var;
     SAMRAI::tbox::Pointer<SAMRAI::pdat::NodeVariable<NDIM, double> > d_P_nc_var;
 
     /*
@@ -448,7 +448,7 @@ private:
      *
      * Plot variables have one context: current.
      */
-    int d_U_nc_idx = IBTK::invalid_index, d_P_nc_idx = IBTK::invalid_index, d_F_cc_idx = IBTK::invalid_index,
+    int d_U_nc_idx = IBTK::invalid_index, d_P_nc_idx = IBTK::invalid_index, d_F_nc_idx = IBTK::invalid_index,
         d_Omega_idx = IBTK::invalid_index, d_Omega_nc_idx = IBTK::invalid_index, d_Div_U_idx = IBTK::invalid_index,
         d_EE_idx = IBTK::invalid_index;
 
@@ -465,4 +465,4 @@ private:
 
 //////////////////////////////////////////////////////////////////////////////
 
-#endif //#ifndef included_IBAMR_INSStaggeredHierarchyIntegrator
+#endif // #ifndef included_IBAMR_INSStaggeredHierarchyIntegrator
